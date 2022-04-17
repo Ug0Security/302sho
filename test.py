@@ -10,7 +10,7 @@ liste = []
 
 try:
         # Search Shodan
-        results = api.search('302 "Content-length" -0 port:443 html:"<div>" -html:"Object moved"', page=PAGE)
+        results = api.search('302 "Content-length" port:443 html:"<div>" -html:"Object moved"', page=PAGE)
 
         # Show the results
         print 'Results found: %s' % results['total']
@@ -20,7 +20,7 @@ try:
 		try:
 			#print result['ip_str'].rstrip()
                 	#print result['data'].rstrip()
-      for line in str(result['data']).split('\n'):
+     			for line in str(result['data']).split('\n'):
 				if 'Content-Length' in line:
 					#print line
 					if int(re.search(r'\d+', line).group()) > 10000:
