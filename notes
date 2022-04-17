@@ -1,0 +1,3 @@
+The plan was to find HTTP services on shodan that return a 302 BUT still have high content-length.
+
+it allowed me to find some 302 bypass and other funny stuff
